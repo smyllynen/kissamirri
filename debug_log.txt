@@ -1,0 +1,6 @@
+2024-03-03 18:06:47 Viestiä ei lähetetty: You must provide at least one recipient email address.
+2024-03-03 18:45:33 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/TroubleshootingSMTP server error: QUIT command failed
+2024-03-03 18:45:34 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/TroubleshootingSMTP server error: QUIT command failed
+2024-03-03 18:45:57 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/TroubleshootingSMTP server error: QUIT command failed
+2024-03-03 18:47:10 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/TroubleshootingSMTP server error: QUIT command failed
+2024-03-03 18:48:28 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/TroubleshootingSMTP server error: QUIT command failed
