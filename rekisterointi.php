@@ -1,4 +1,14 @@
 <?php
+
+/* Apufunktio */
+function validoi($kentta,$arvo) {
+    global $pattern;
+    if (isset($pattern[$kentta])) {
+        return preg_match($pattern[$kentta],$arvo);
+        }
+    return true;
+    }
+    
 $display = "d-none";
 $message = "";
 $success = "success";
