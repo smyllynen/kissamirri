@@ -1,7 +1,7 @@
 
 <?php
 
-// Database connection parameters
+    // Database connection parameters
 ;
 
 // Create a connection

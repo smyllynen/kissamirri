@@ -55,7 +55,7 @@ $result = $stmt_select->get_result();
 
 // Näytä tarjoukset tuotekorteilla
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         echo '<div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">

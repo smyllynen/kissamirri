@@ -22,6 +22,5 @@ $dbname = "kissimirrisivut_etusivu";
 
 
     <?php
-    
+
     include "footer.html";
-    

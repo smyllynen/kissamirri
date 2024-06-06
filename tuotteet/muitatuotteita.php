@@ -1,5 +1,3 @@
-
-
 <?php
 // Tietokantaparametrit
 
@@ -22,27 +20,27 @@ echo '<div class="row">'; // Aloita uusi rivi
 
 if ($result->num_rows > 0) {
     // Tulosta jokaisen rivin tiedot
-    while($row = $result->fetch_assoc()) {
-        ?>
+    while ($row = $result->fetch_assoc()) {
+?>
         <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-           
-                <div class="card h-100">
-                    <img src="<?php echo htmlspecialchars($row["kuva"]); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row["nimi"]); ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($row["nimi"]); ?></h5>
-                        <p class="card-text"><?php echo htmlspecialchars($row["kuvaus"]); ?></p>       
-                    </div>
-                    <div class="card-footer">
-                        <div class="btn-group">
-						   <button type="button" class="btn btn-sm btn-outline-secondary">Kappalehinta</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><?php echo htmlspecialchars($row["hinta"]); ?> €</button>
-                            
-                        </div>
+
+            <div class="card h-100">
+                <img src="<?php echo htmlspecialchars($row["kuva"]); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row["nimi"]); ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo htmlspecialchars($row["nimi"]); ?></h5>
+                    <p class="card-text"><?php echo htmlspecialchars($row["kuvaus"]); ?></p>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Kappalehinta</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><?php echo htmlspecialchars($row["hinta"]); ?> €</button>
+
                     </div>
                 </div>
-          
+            </div>
+
         </div>
-        <?php
+<?php
     }
 } else {
     echo "0 results";
@@ -53,6 +51,3 @@ echo '</div>'; // Sulje konttiineri
 
 $conn->close(); // Sulje tietokantayhteys
 ?>
-
-
-

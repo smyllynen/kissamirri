@@ -37,15 +37,14 @@ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php 
 background-size: cover;
 text-align:center;
 color: white;">
-<div class="container-fluid p-5" style="padding-top: 100px; padding-bottom: 100px;" id="root">
-    <div class="row">
-        <div class="col-md">
-            <h1 style="text-align:left;"><?php echo htmlspecialchars($texts['content']); ?></h1>
-        </div>
-        <div class="col-md">
-           <img src="<?php echo htmlspecialchars($images['circle'][0]); ?>" alt="circle" width="283" height="259">
+    <div class="container-fluid p-5" style="padding-top: 100px; padding-bottom: 100px;" id="root">
+        <div class="row">
+            <div class="col-md">
+                <h1 style="text-align:left;"><?php echo htmlspecialchars($texts['content']); ?></h1>
+            </div>
+            <div class="col-md">
+                <img src="<?php echo htmlspecialchars($images['circle'][0]); ?>" alt="circle" width="283" height="259">
+            </div>
         </div>
     </div>
 </div>
-</div>
-

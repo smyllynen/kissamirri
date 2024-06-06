@@ -4,7 +4,7 @@
 
 // Yhdistetään tietokantaan
 
-$dbname ="kissimirrisivut_etusivu";
+$dbname = "kissimirrisivut_etusivu";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -26,8 +26,8 @@ while ($row = $result_images->fetch_assoc()) {
     $images[$row['section']][] = $row['url'];
 }
 
-    ?>
-    <div style="
+?>
+<div style="
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo htmlspecialchars($images['welcome'][0]); ?>') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -41,7 +41,7 @@ while ($row = $result_images->fetch_assoc()) {
                 <h1 style="text-align:left;"><?php echo htmlspecialchars($texts['content']); ?></h1>
             </div>
             <div class="col-md">
-               <img src="<?php echo htmlspecialchars($images['circle'][0]); ?>" alt="circle" width="283" height="259">
+                <img src="<?php echo htmlspecialchars($images['circle'][0]); ?>" alt="circle" width="283" height="259">
             </div>
         </div>
     </div>
