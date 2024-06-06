@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $title = "Tuotteiden tilaus";
 $js = "scripts.js";
 include "header.php";
@@ -7,7 +8,7 @@ include "header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['nimi'], $_POST['email'], $_POST['aihe'], $_POST['viesti'])) {
-       include "tunnukset.php";
+        include "tunnukset.php";
         $database = "otayhteytta";
 
         $conn = new mysqli($servername, $username, $password, $database);
@@ -27,7 +28,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $uutiskirje = isset($_POST['uutiskirje']) ? 'kylla' : 'ei';
 
         if ($stmt->execute()) {
-            header("Location: onnistunut_tilaus.php");
+            // Tallenna tilauksen tiedot sessioon
+            $_SESSION['tuoteidentilaus'] = [
+                'nimi' => $nimi,
+                'email' => $email,
+                'aihe' => $aihe,
+                'viesti' => $viesti,
+                'uutiskirje' => $uutiskirje
+            ];
+            // header("Location: tilaus.php");
+            echo "<script>setTimeout(function() { window.location.href = 'tilaus.php'; }, 5000);</script>";
             exit();
         } else {
             echo "Virhe tallennettaessa yhteydenottoa: " . $stmt->error;
@@ -46,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Tuotteiden tilaus  </h1>
 <p>
 Tilaa SuklaaMirri leivoksia myymälästä noudettavaksi. Voit maksaa tilauksen joko maksalaskulla, joka toimitetaan sähköpostitse, tai suoraan myymälässä. Tilauksen käsittely kestää 1-2 päivää, ja saat ilmoituksen, kun nouto on valmis.</p>
-<form class="mb-3 needs-validation" novalidate action="otayhteytta.php" method="post">
+<form class="mb-3 needs-validation" novalidate action="tuotteidentilaus.php" method="post">
 
 <div class="row mb-2">
 <label class="form-label col-sm-4" for="nimi">Nimi</label>
@@ -74,7 +84,7 @@ Please give your email address.
 <select class="form-select" name="aihe" id="aihe">
 <option value="kysymys">Valitse </option>
 <option value="tummasuklaa">Muffini</option>
-<option value="maitosuklaa">Suklaa kakku</option>
+<option value="maitosuklaa">Suklaakakku</option>
 <option value="valkosuklaa">Mokkapalat</option>
 <option value="muu">Muu kirjoita viesti kenttään.</option>
 </select>
@@ -102,6 +112,8 @@ Please give your email address.
 
 </form>
 </div>
+
+
 <?php
 include "footer.html";
 ?>

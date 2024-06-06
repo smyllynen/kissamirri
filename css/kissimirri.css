@@ -1,0 +1,218 @@
+
+.brand-logo {
+    padding: 0;
+    margin:0 20px 0 0;
+    text-align: left;
+  }
+  
+  .brand-logo img {
+    max-height: 54px;
+    object-fit: contain;
+  }
+  
+  nav {
+    overflow: hidden;
+    background-color: #333;
+    color:#fff;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  nav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  nav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Piilotetaan kaikki linkit paitsi ensimmäinen */
+  nav a:not(:first-child) {display: none;}
+  
+  nav .icon {
+    position: absolute;
+    right: 0;
+    font-size: 24px; 
+    cursor: pointer;
+    padding: 10px 10px;
+  }
+    
+  nav .close {
+    display: none;
+  }
+  
+  /*nav .nav-suojaus {
+    display: flex;
+    flex:1 0 auto;
+    justify-content: flex-end;
+  }*/
+  
+  #toggle-btn {
+    position: absolute;
+    visibility: hidden;
+  }  
+  
+  /* Näytetään pystypalkki, näyttötila on tallennettu checkboxiin */
+  #toggle-btn:checked ~ a {
+    display: inline;
+    text-align: left;
+  }
+  
+  /* Pystypalkin pohjalle tyhjää */
+  #toggle-btn:checked ~ a:last-child {
+    padding-bottom: 16px;
+  }
+  
+  /* Huom. labelin oletus-display on inline, myös block toimisi */
+  #toggle-btn:checked ~ .close {
+    display: inline;
+  }
+  
+  #toggle-btn:checked ~ .open {
+    display: none;
+  }
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 1rem;
+    }
+  }
+  @media (min-width:767px) {
+    nav {flex-direction: row;}
+    nav .nav-suojaus {margin-left: auto;}
+    nav a:not(:first-child) {display: inline; padding: 14px 16px;}    
+    nav .icon, #toggle-btn:checked ~ .close {display: none;}
+  }
+  
+  a.navbar-brand img {
+    height: 50px;
+  }
+
+
+  div#root {
+    padding-top: 50px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+a {
+  text-decoration: none;
+}
+.bg-dark {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../kuvat/ruskea.webp') no-repeat center center fixed !important; 
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.p-5 {
+  padding: 2rem !important;
+}
+
+
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  border-radius: var(--bs-border-radius-lg) !important;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.20);
+
+} 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: rgb(255,224,194);
+  background: linear-gradient(0deg, rgba(255,224,194,1) 0%, rgba(254,172,93,1) 100%);
+}
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: #FEAC5D !important;
+}
+
+.custom-shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+nav a:hover {
+  background-color:#FFE0C2;
+  color: black;
+}
+a.link-secondary {
+  color: black!important;
+}
+.black-white {
+  background-color:#FEAC5D;
+  color: white;
+  border-color: white;
+}
+.black-white:hover {
+  background-color: white;
+  color: black;
+  border-color: #FEAC5D;
+}
+.card {
+  
+  
+  background-color:#FFE0C2!important;
+  
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6c757d;
+  --bs-btn-hover-border-color: #6c757d;
+  --bs-btn-focus-shadow-rgb: 108, 117, 125;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #6c757d;
+  --bs-btn-active-border-color: #6c757d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #6c757d;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #6c757d;
+  --bs-gradient: none;
+}
+.btn:hover {
+  color: white;
+  background-color: #FEAC5D;
+  border-color: var(--bs-btn-hover-border-color);
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+.card {
+  transition: 0.3;
+  box-shadow: 0 5px 16px 0 rgba(0,0,0,0.10);
+
+}
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+
+.bg-dark{
+  transition: 0.3;
+  box-shadow: 0 5px 16px 0 rgba(0,0,0,0.10);
+}
+.bg-dark:hover {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+} 

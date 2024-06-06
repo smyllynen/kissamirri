@@ -3,14 +3,15 @@
 $title = "Tuotteiden tilaus";
 $js = "scripts.js";
 include "header.php";
-
+$dbname ="kissimirrisivut";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['nimi'], $_POST['email'], $_POST['aihe'], $_POST['viesti'])) {
        include "tunnukset.php";
-        $database = "otayhteytta";
+        $ = "yhteydenotot";
 
         $conn = new mysqli($servername, $username, $password, $database);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container" id="root">
 <h1> Anna palautetta  </h1>
 <p>Antaisitko palautetta sivustostani? Voit jakaa ruusut, risut ja antaa parannusehdotuksia.  </p>
-<form class="mb-3 needs-validation" novalidate action="otayhteytta.php" method="post">
+<form class="mb-3 needs-validation" novalidate action="palaute.php" method="post">
 
 <div class="row mb-2">
 <label class="form-label col-sm-4" for="nimi">Nimi</label>

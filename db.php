@@ -1,23 +1,22 @@
 <?php
-$palvelin = "localhost";
-$kayttaja = "root";  
-$salasana = "jukka1";
-$tietokanta = "sakila";
-$yhteys = new mysqli($palvelin, $kayttaja, $salasana, $tietokanta);
-if ($yhteys->connect_error) {
-    die("Yhteyden muodostaminen epäonnistui: " . $yhteys->connect_error);
-    }
-$yhteys->set_charset("utf8");
 
-function query_oma($yhteys, $query) {
+include "tunnukset.php";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Yhteyden muodostaminen epäonnistui: " . $conn->connect_error);
+    }
+$conn->set_charset("utf8");
+
+function query_oma($conn, $query) {
 /* Suorittaa kyselyn poimien hallitusti fatal-virheet, joita
    voisi syntyä esim. viiteavaimien estämissä kyselyissä. */
     try {
-        $result = $yhteys->query($query);
+        $result = $conn->query($query);
         return $result;
         } 
     catch (Throwable $e) {
-        if ($yhteys->errno === 1062) {
+        if ($conn->errno === 1062) {
             // Handle the duplicate entry scenario
             echo "Samat tiedot ovat jo olemassa. Yritä uudelleen.";
             debuggeri("Virhe kyselyssä $query:\n".$e->getMessage());
@@ -30,11 +29,11 @@ function query_oma($yhteys, $query) {
         }   
     }
 
-function puhdista($yhteys, $data) {
+function puhdista($conn, $data) {
 /* Estää SQL-injektiot. */ 
     if (is_array($data)) $data = implode(",",$data);    
     $data = strip_tags(trim($data));
-    $data = $yhteys->real_escape_string($data);
+    $data = $conn->real_escape_string($data);
     return $data;
 }
 ?>

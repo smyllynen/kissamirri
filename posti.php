@@ -5,7 +5,7 @@ require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 //$to = $EMAIL_ADMIN;
-
+// jäsenyys
 function posti($emailTo,$msg,$subject){
 $emailFrom = "wohjelmointi@gmail.com";
 $emailFromName = "Ohjelmointikurssi";

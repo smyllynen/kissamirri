@@ -3,9 +3,11 @@
 include "asetukset.php";
 include "debuggeri_simple.php";
 $active = basename($_SERVER['PHP_SELF'],'.php');
-function active($sivu,$active){
-    return $active == $sivu ? 'active' : '';  
-    }
+if (!function_exists('active')) {
+  function active($sivu, $active) {
+      return $active == $sivu ? 'active' : '';
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +18,7 @@ function active($sivu,$active){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta description="joku kuvausteksti" author="Sari MYllynen">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<link rel="stylesheet" href="kissimirri.css">
+<link rel="stylesheet" href="css/kissimirri.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
 
 <?php
@@ -69,7 +71,7 @@ window.onload = function () {'use strict'
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.php">
-    <img src="kuvat/kissimirri-suklaatupa.svg" alt="Logo">
+    <img src="kuvat/logo.webp" alt="Logo">
   </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -79,9 +81,8 @@ window.onload = function () {'use strict'
       <?php
       echo "<li class='nav-item ".active('index',$active)."'><a class='nav-link' href='index.php'>Yritys</a></li>";
       echo "<li class='nav-item ".active('tuotteet',$active)."'><a class='nav-link' href='tuotteet.php'>Tuotteet</a></li>";
-      echo "<li class='nav-item ".active('palaute',$active)."'><a class='nav-link' href='palaute.php'>Palautelomake</a></li>";
       echo "<li class='nav-item ".active('tuotteidentilaus',$active)."'><a class='nav-link' href='tuotteidentilaus.php'>Tuotteiden tilaus</a></li>";
-      echo "<li class='nav-item ".active('jasenyys',$active)."'><a class='nav-link' href='jasenyys.php'>Jäsenyys</a></li>";
+      echo "<li class='nav-item ".active('rekisterointilomake',$active)."'><a class='nav-link' href='rekisterointilomake.php'>Jäsenyys</a></li>";
       ?>
     </ul>
   </div>

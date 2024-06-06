@@ -1,9 +1,9 @@
 
 <?php
+// jäsenyys
 // Tietokantayhteys
 $title = "Kissimirri suklaatupa";
 include "header.php";
-include"tunnukset.php";
 
 // Luo yhteys
 $conn = new mysqli($servername, $username, $password, $dbname);

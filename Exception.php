@@ -3,6 +3,7 @@
 /**
  * PHPMailer Exception class.
  * PHP Version 5.5.
+ * jäsenyys
  *
  * @see       https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *

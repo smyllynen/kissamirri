@@ -2,7 +2,7 @@
 
 
 <?php
-$dbname ="kissimirrisivut";
+
 
 $title = "Kissimirri suklaatupa";
 
@@ -20,7 +20,7 @@ $stmt->execute();
 
 $result = $stmt->get_result();
 
-echo '<div class="container">'; // Start a new container
+echo '<div class="container-fluid p-5">'; // Start a new container
 echo '<div class="row">'; // Start a new row
 
 if ($result->num_rows > 0) {
